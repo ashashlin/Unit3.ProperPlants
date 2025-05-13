@@ -1,9 +1,18 @@
+import CartItems from "./CartItems";
 import "./Cart.css";
 
-export default function Cart() {
+export default function Cart({ cart }) {
   return (
     <section className="cart-section">
       <h2>Cart</h2>
+
+      <section className="cart">
+        {cart.length === 0 ? (
+          <p>Your cart is empty.</p>
+        ) : (
+          <CartItems cart={cart} />
+        )}
+      </section>
     </section>
   );
 }
