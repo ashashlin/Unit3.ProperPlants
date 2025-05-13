@@ -1,7 +1,7 @@
 import CartItems from "./CartItems";
 import "./Cart.css";
 
-export default function Cart({ cart }) {
+export default function Cart({ cart, decreaseQuantity, increaseQuantity }) {
   return (
     <section className="cart-section">
       <h2>Cart</h2>
@@ -10,7 +10,11 @@ export default function Cart({ cart }) {
         {cart.length === 0 ? (
           <p>Your cart is empty.</p>
         ) : (
-          <CartItems cart={cart} />
+          <CartItems
+            cart={cart}
+            decreaseQuantity={decreaseQuantity}
+            increaseQuantity={increaseQuantity}
+          />
         )}
       </section>
     </section>

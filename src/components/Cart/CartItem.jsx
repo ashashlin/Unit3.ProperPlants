@@ -1,4 +1,4 @@
-export default function CartItem({ item }) {
+export default function CartItem({ item, decreaseQuantity, increaseQuantity }) {
   return (
     // is subject to change
     <div className="cart-item">
@@ -7,9 +7,19 @@ export default function CartItem({ item }) {
       </div>
 
       <div className="cart-item-quantity-container">
-        <button className="subtract-quantity">-</button>
+        <button
+          className="decrease-quantity"
+          onClick={() => decreaseQuantity(item)}
+        >
+          -
+        </button>
         <span className="cart-item-quantity">{item.quantity}</span>
-        <button className="add-quantity">+</button>
+        <button
+          className="increase-quantity"
+          onClick={() => increaseQuantity(item)}
+        >
+          +
+        </button>
       </div>
     </div>
   );

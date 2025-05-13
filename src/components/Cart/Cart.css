@@ -14,8 +14,8 @@
   text-align: center;
 }
 
-.subtract-quantity,
+.decrease-quantity,
 .cart-item-quantity,
-.add-quantity {
+.increase-quantity {
   width: 5rem;
 }

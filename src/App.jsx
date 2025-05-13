@@ -22,9 +22,34 @@ export default function App() {
       return;
     }
 
+    increaseQuantity(plant);
+  }
+
+  function decreaseQuantity(item) {
+    setCart((prevCart) =>
+      prevCart
+        .map((prevItem) => {
+          if (prevItem.id === item.id) {
+            const newQuantity = prevItem.quantity - 1;
+
+            if (newQuantity === 0) return null;
+
+            return {
+              ...prevItem,
+              quantity: newQuantity,
+            };
+          } else {
+            return prevItem;
+          }
+        })
+        .filter(Boolean)
+    );
+  }
+
+  function increaseQuantity(item) {
     setCart((prevCart) =>
       prevCart.map((prevItem) => {
-        if (prevItem.id === plant.id) {
+        if (prevItem.id === item.id) {
           return {
             ...prevItem,
             quantity: prevItem.quantity + 1,
@@ -42,7 +67,11 @@ export default function App() {
 
       <main>
         <Plants addToCart={addToCart} />
-        <Cart cart={cart} />
+        <Cart
+          cart={cart}
+          decreaseQuantity={decreaseQuantity}
+          increaseQuantity={increaseQuantity}
+        />
       </main>
     </>
   );
