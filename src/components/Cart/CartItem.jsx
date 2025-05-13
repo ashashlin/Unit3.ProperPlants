@@ -3,8 +3,7 @@ export default function CartItem({ item }) {
     // is subject to change
     <div className="cart-item">
       <div className="cart-item-details">
-        {item.image}
-        {item.name}
+        {item.image} {item.name}
       </div>
 
       <div className="cart-item-quantity-container">

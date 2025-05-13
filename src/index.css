@@ -87,3 +87,7 @@ main {
   display: flex;
   gap: 1rem;
 }
+
+button {
+  cursor: pointer;
+}

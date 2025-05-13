@@ -1,3 +1,21 @@
 .cart-section {
   flex-basis: 15rem;
 }
+
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cart-item-quantity-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.subtract-quantity,
+.cart-item-quantity,
+.add-quantity {
+  width: 5rem;
+}
