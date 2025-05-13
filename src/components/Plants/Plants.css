@@ -1,0 +1,27 @@
+.plants-section {
+  flex: 1;
+}
+
+.plants {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.5rem;
+}
+
+.plant {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #d3d3d380;
+}
+
+.plant-img {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.plant-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
